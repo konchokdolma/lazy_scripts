@@ -2,4 +2,4 @@
 
 ### open_eclipse.py
 
-Example of the script when we want to automate java project creation in eclipse.
+In case you are too lazy every time create new java project in eclipse.
