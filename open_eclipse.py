@@ -30,14 +30,20 @@ time.sleep(10)
 thread.start_new(ecl2, ())
 time.sleep(15)
 
-# make the full screen, so the position of the menu will be always the same
-os.system('xdotool key ctrl+super+Up')
+os.system('xdotool key ctrl+n')
+time.sleep(1)
 
-# coordinates of the mouse, where we need to click
-# to check the location of the coursor, you can use 'xdotool getmouselocation' in terminal
-os.system('xdotool mousemove 327 386 click 1')
+os.system('xdotool type Java && xdotool key space && xdotool type Project')
+time.sleep(1)
+os.system('xdotool key Return')
 
-time.sleep(6)
+''' Another method to do that is to open full screen, so that the menu 
+    would be always on the same place and click whenever you need.
+    To check the location of the coursor, you can use 'xdotool getmouselocation'
+    
+    os.system('xdotool key ctrl+super+Up')
+    os.system('xdotool mousemove 327 386 click 1')
+    '''
 
 # type the name of the project folder for the next lesson and press enter.
 string2 = 'xdotool type lecture_' + str(max_value + 1) + ' && xdotool key Return'
