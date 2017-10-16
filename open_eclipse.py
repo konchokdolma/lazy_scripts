@@ -23,12 +23,31 @@ def ecl2():
 # starting thread to continue scripting commands with the running eclipse
 thread.start_new(ecl, ())
 
-# waiting till the eclipse loads
-time.sleep(10)
+# checks for the %CPU, if java loaded
+def check():
+	proccess = os.popen('top -b -n1')
+	b = proccess.readlines()
+	for i in range(len(b)):
+		if 'java' in b[i]:
+			temp = [value for value in b[i].split(' ') if value != '']
+			temp[8].replace(',', '.')
+			if float(temp[8].replace(',', '.')) < 5:
+				print temp[8]
+				return 1
+	return 0
+
+i = 0
+while i == 0:
+	i += check()
+	time.sleep(0.7)
 
 # same with next commands
 thread.start_new(ecl2, ())
-time.sleep(15)
+
+j = 0
+while j == 0:
+	j += check()
+	time.sleep(0.7)
 
 os.system('xdotool key ctrl+n')
 time.sleep(1)
