@@ -23,7 +23,7 @@ def ecl2():
 # starting thread to continue scripting commands with the running eclipse
 thread.start_new(ecl, ())
 
-# checks for the %CPU, if java loaded
+# checks for the %CPU, if eclipse loaded
 def check():
 	proccess = os.popen('top -b -n1')
 	b = proccess.readlines()
