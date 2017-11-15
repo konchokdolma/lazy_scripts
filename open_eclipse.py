@@ -3,7 +3,7 @@ import re
 import time
 import thread
 
-# check the directories in the workspace
+# store the directories in the workspace
 a = os.popen('ls ~/Documents/OOP/lectures').read()
 
 # find the maximum integer, containing in the name of the directory 
