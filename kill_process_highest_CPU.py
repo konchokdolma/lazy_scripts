@@ -1,14 +1,14 @@
 import os
 
-# stores the top output
+# stores the output from top command
 process = os.popen('top -b -n1')
 b = process.readlines()
 
-# starting point where the list of processes start
+# starting point
 check = b[0]
 i = 0
 
-# running untill the list of processes
+# running untill there starts the list of processes
 while '%CPU' not in b[i]:
         i += 1
 
