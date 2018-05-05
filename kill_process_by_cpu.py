@@ -8,11 +8,11 @@ b = process.readlines()
 check = b[0]
 i = 0
 
-# running untill there starts the list of processes
+# running untill there comes the list of processes
 while '%CPU' not in b[i]:
         i += 1
 
-# getting PID from the next line
+# getting PID from the next line (first line in the list - the highest CPU)
 ID =  b[i+1].split(' ')[0]
 
 os.system('kill -9 ' + ID)
