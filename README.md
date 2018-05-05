@@ -7,4 +7,4 @@ Shows the example how to use xdotool to simulate keyboard, example for python th
 
 ### kill_process_by_cpu.py
 
-Short script to blindly kill the process with highest %CPU.
+Short script to blindly kill the process with highest %CPU. (Ubuntu)
